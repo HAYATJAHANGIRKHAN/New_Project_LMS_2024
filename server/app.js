@@ -13,4 +13,12 @@ app.use(cookieParser());
 
 app.use('/ping', function(req, res) {
     res.send('pong');
-})
+});
+
+
+// routes of 3 modules;
+app.all('*',(req,res)=>{
+    res.status(404).send('Page not found');
+});
+
+module.exports =app;
