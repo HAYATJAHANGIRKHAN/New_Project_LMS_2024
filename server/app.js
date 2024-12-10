@@ -18,7 +18,7 @@ app.use('/ping', function(req, res) {
 
 // routes of 3 modules;
 app.all('*',(req,res)=>{
-    res.status(404).send('Page not found');
+    res.status(404).send('Page not found please try again');
 });
 
 module.exports =app;
