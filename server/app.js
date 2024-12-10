@@ -1,4 +1,4 @@
-const express = require('express'); 
+import express from'express'; 
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const app = express();
@@ -21,4 +21,4 @@ app.all('*',(req,res)=>{
     res.status(404).send('Page not found please try again');
 });
 
-module.exports =app;
+export default app;
