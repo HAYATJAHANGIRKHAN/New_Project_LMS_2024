@@ -5,3 +5,7 @@
  
 -->create server.js folder with
 --> npm i nodemon --save.
+-->  npm i morgan --save
+
+
+--> npm run dev === for start sarver 
