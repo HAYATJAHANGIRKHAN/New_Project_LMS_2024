@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 mongoose.set ('strictQuery', false);
-const connectionTODB=async ()=>{
+const connectionTODB = async ()=>{ 
     try{
 
         const {connection}= await mongoose.connect(
@@ -9,7 +9,7 @@ const connectionTODB=async ()=>{
         );
     
         if(connection){
-    console.log(`Connected to mongoDB: ${connection}`);
+    console.log(`Connected to mongoDB: ${connection.host}`);
         }
     } catch(e){
         console.log(e);
