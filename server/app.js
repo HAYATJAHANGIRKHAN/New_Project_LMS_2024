@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser';
 import { config } from 'dotenv';
 import morgan from 'morgan';
 import userRoutes from './routes/user.routes.js';  
-
+ 
 // Load environment variables
 config();
 
@@ -32,6 +32,8 @@ app.use('/api/v1/user', userRoutes);
 app.all('*', (req, res) => {
   res.status(404).send('Page not found. Please try again.');
 });
+
+app.use(errorMiddleware);
 
 // Export the app instance
 export default app;
