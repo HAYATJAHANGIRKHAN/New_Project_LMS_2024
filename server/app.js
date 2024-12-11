@@ -4,6 +4,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { config } from 'dotenv';
 import morgan from 'morgan';
+import userRoutes from './routes/user.routes.js';  
 
 // Load environment variables
 config();
@@ -25,7 +26,8 @@ app.use(morgan('dev'));
 app.use('/ping', (req, res) => {
   res.send('pong');
 });
-
+ 
+app.use('/api/v1/user', userRoutes);
 // Handle unknown routes
 app.all('*', (req, res) => {
   res.status(404).send('Page not found. Please try again.');
