@@ -1,5 +1,13 @@
-
+import User from '../models/user.model';
 import AppError from "../utils/error.util";
+
+const cookieOptions = {
+  maxAge: 7*24*60*60*100, //7days
+  httpOnly: true,
+  secure: process
+}
+
+
 const register = async (req, res, next) => {
   const { fullName, email, password } = req.body;
 
@@ -29,6 +37,7 @@ const register = async (req, res, next) => {
   user.password=undefined;
 
   const token =await user.generateJWTToken();
+  res.cookie('token',token,cookieOptions)
 
   res.status(201).json({
     success:true,
