@@ -26,6 +26,15 @@ const register = async (req, res, next) => {
   }
   // TODO:FILE UPLOAD 
   await User.save();
+  user.password=undefined;
+
+  const token =await user.generateJWTToken();
+
+  res.status(201).json({
+    success:true,
+    message:'user Successfully registered',
+    user,
+  })
 
 
 };
