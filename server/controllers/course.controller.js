@@ -37,7 +37,7 @@ export const createCourse = asyncHandler(async (req, res, next) => {
 
   const course = await Course.create({
     title,
-    description,
+    description, 
     category,
     createdBy,
   });
